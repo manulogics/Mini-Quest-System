@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public abstract class Quest : IQuest
 {
     public string Title { get; private set; }
