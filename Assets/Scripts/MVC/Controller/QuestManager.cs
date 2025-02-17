@@ -21,7 +21,7 @@ namespace manulogics.Quests
             _activeQuests.Add(quest);
         }
 
-        private void OnItemCollected(ItemCollectedSignal signal)
+        public void OnItemCollected(ItemCollectedSignal signal)
         {
             foreach (var quest in _activeQuests)
             {
