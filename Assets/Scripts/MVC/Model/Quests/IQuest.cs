@@ -1,6 +1,9 @@
-public interface IQuest
+namespace manulogics.Quests
 {
-    string Title { get; }
-    bool IsCompleted { get; }
-    void CheckProgress();
+    public interface IQuest
+    {
+        string Title { get; }
+        bool IsCompleted { get; }
+        void CheckProgress();
+    }
 }

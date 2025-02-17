@@ -1,13 +1,16 @@
-public abstract class Quest : IQuest
+namespace manulogics.Quests
 {
-    public string Title { get; private set; }
-    public bool IsCompleted { get; protected set; }
-
-    protected Quest(string title)
+    public abstract class Quest : IQuest
     {
-        Title = title;
-        IsCompleted = false;
-    }
+        public string Title { get; private set; }
+        public bool IsCompleted { get; protected set; }
+
+        protected Quest(string title)
+        {
+            Title = title;
+            IsCompleted = false;
+        }
     
-    public abstract void CheckProgress();
+        public abstract void CheckProgress();
+    }
 }

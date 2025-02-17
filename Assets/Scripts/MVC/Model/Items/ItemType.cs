@@ -1,7 +1,10 @@
-public enum ItemType
+namespace manulogics.Items
 {
-    Coin,
-    Apple,
-    Orange,
-    Pear,
+    public enum ItemType
+    {
+        Coin,
+        Apple,
+        Orange,
+        Pear,
+    }
 }

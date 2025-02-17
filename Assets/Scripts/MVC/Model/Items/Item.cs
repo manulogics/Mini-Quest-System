@@ -1,9 +1,12 @@
-public class Item
+namespace manulogics.Items
 {
-    public ItemType Type { get; private set; }
-
-    public Item(ItemType type)
+    public class Item
     {
-        Type = type;
+        public ItemType Type { get; private set; }
+
+        public Item(ItemType type)
+        {
+            Type = type;
+        }
     }
 }
