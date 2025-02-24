@@ -15,9 +15,9 @@ namespace manulogics.Quests
             _container = container;
         }
 
-        public void StartQuest<T>() where T : IQuest
+        public void StartQuest<T>(params object[] args) where T : IQuest
         {
-            var quest = _container.Resolve<T>();
+            var quest = (T)System.Activator.CreateInstance(typeof(T), args);
             _activeQuests.Add(quest);
             quest.StartQuest();
         }
