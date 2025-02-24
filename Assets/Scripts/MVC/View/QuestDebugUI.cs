@@ -35,7 +35,7 @@ namespace manulogics.UI
             collectItemTypeDropdown.ClearOptions();
             collectItemTypeDropdown.AddOptions(System.Enum.GetNames(typeof(ItemType)).ToList());
             defeatEnemyTypeDropdown.ClearOptions();
-            defeatEnemyTypeDropdown.AddOptions(System.Enum.GetNames(typeof(ItemType)).ToList());
+            defeatEnemyTypeDropdown.AddOptions(System.Enum.GetNames(typeof(EnemyType)).ToList());
         }
 
         private void StartCollectItemQuest()
