@@ -16,15 +16,6 @@ namespace manulogics.Quests
             _currentAmount = 0;
         }
 
-        public void OnItemCollected(Item item)
-        {
-            if (item.Type == _requiredItem)
-            {
-                _currentAmount++;
-                CheckProgress();
-            }
-        }
-
         public override void StartQuest()
         {
             Debug.Log($"Quest Started: {Title} - Collect {_requiredAmount} items of type {_requiredItem}!");
@@ -36,6 +27,15 @@ namespace manulogics.Quests
             {
                 IsCompleted = true;
                 Debug.Log($"Quest Completed: {Title}");
+            }
+        }
+        
+        public void OnItemCollected(Item item)
+        {
+            if (item.Type == _requiredItem)
+            {
+                _currentAmount++;
+                CheckProgress();
             }
         }
     }
