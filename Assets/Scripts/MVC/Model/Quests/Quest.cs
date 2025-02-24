@@ -10,7 +10,8 @@ namespace manulogics.Quests
             Title = title;
             IsCompleted = false;
         }
-    
+        
+        public abstract void StartQuest();
         public abstract void CheckProgress();
     }
 }

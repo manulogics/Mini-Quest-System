@@ -4,6 +4,7 @@ namespace manulogics.Quests
     {
         string Title { get; }
         bool IsCompleted { get; }
+        void StartQuest();
         void CheckProgress();
     }
 }

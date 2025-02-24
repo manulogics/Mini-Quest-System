@@ -25,6 +25,11 @@ namespace manulogics.Quests
             }
         }
 
+        public override void StartQuest()
+        {
+            Debug.Log($"Quest Started: {Title} - Collect {_requiredAmount} items of type {_requiredItem}!");
+        }
+
         public override void CheckProgress()
         {
             if (_currentAmount >= _requiredAmount)
