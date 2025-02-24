@@ -25,13 +25,7 @@ namespace manulogics.UI
         [Header("Debug Log")]
         [SerializeField] private TMP_Text questLogText;
         
-        private QuestManager _questManager;
-
-        [Inject]
-        public void Construct(QuestManager questManager)
-        {
-            _questManager = questManager;
-        }
+        [Inject] private QuestManager _questManager;
 
         private void Start()
         {

@@ -8,13 +8,10 @@ namespace manulogics.Installers
 {
     public class GameInstaller : MonoInstaller
     {
-        [SerializeField] private QuestDebugUI questDebugUI;
-        
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<QuestManager>().AsSingle();
+            Container.Bind<QuestManager>().AsSingle();
             QuestInstaller.Install(Container);
-            Container.Bind<QuestDebugUI>().FromInstance(questDebugUI).AsSingle();
         }
     }
 }
