@@ -8,12 +8,8 @@ namespace manulogics.Installers
     {
         public override void InstallBindings()
         {
-            SignalBusInstaller.Install(Container);
-
-            Container.DeclareSignal<ItemCollectedSignal>();
-            Container.BindSignal<ItemCollectedSignal>()
-                .ToMethod<QuestManager>(x => x.OnItemCollected)
-                .FromResolve();
+            Container.BindInterfacesTo<QuestManager>().AsSingle();
+            QuestInstaller.Install(Container);
         }
     }
 }
