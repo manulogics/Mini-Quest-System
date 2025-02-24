@@ -6,28 +6,20 @@ namespace manulogics.Quests
 {
     public class QuestManager
     {
-        private List<IQuest> _activeQuests = new();
-        private SignalBus _signalBus;
+        private readonly List<IQuest> _activeQuests = new();
+        private readonly DiContainer _container;
 
         [Inject]
-        public QuestManager(SignalBus signalBus)
+        public QuestManager(DiContainer container)
         {
-            _signalBus = signalBus;
-            signalBus.Subscribe<ItemCollectedSignal>(OnItemCollected);
+            _container = container;
         }
 
-        public void AddQuest(IQuest quest)
+        public void StartQuest<T>() where T : IQuest
         {
+            var quest = _container.Resolve<T>();
             _activeQuests.Add(quest);
-        }
-
-        public void OnItemCollected(ItemCollectedSignal signal)
-        {
-            foreach (var quest in _activeQuests)
-            {
-                if (quest is CollectItem_Quest collectQuest)
-                    collectQuest.OnItemCollected(signal.Item);
-            }
+            quest.StartQuest();
         }
     }
 }
